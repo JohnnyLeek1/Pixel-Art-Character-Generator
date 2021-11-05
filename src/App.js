@@ -53,10 +53,10 @@ function App() {
       setIsGenerating(true);
       redraw();
 
-      drawClothing('Head', 8, 2, -3);
-      drawClothing('Legs', 5, 3, 21);
-      drawClothing('Body', 7, -6, 11);
-      drawClothing('Feet', 5, 0, 31);
+      drawClothing('Head', 11, 2, -3);
+      drawClothing('Feet', 8, 0, 31);
+      drawClothing('Legs', 7, 3, 21);
+      drawClothing('Body', 9, -6, 11);
       setIsGenerating(false);
     }
   }
