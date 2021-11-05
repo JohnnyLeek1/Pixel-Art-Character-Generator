@@ -35,28 +35,38 @@ function App() {
 
   useEffect(redraw, []);
 
-  const drawClothing = (bodyPart, numItems, offsetX, offsetY) => {
+  const drawClothing = async (bodyPart, numItems, offsetX, offsetY) => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
 
-    import(`./resources/${bodyPart}/${randomRange(0, numItems)}.png`)
-    .then(image => {
-      const img = new Image();
-      img.src = image.default;
-  
-      img.onload = () => context.drawImage(img, centerX + offsetX, centerY + offsetY);
+    return new Promise((resolve, reject) => {
+      import(`./resources/${bodyPart}/${randomRange(0, numItems)}.png`)
+      .then(image => {
+        const img = new Image();
+        img.src = image.default;
+    
+        img.onload = () => {
+          context.drawImage(img, centerX + offsetX, centerY + offsetY);
+          resolve(true);
+        }
+      })
+      .catch((error) => reject(error));
     });
+
   }
 
-  const generateOutfit = () => {
+  const generateOutfit = async () => {
     if(!isGenerating) {
       setIsGenerating(true);
       redraw();
 
-      drawClothing('Head', 11, 2, -3);
-      drawClothing('Feet', 8, 0, 31);
-      drawClothing('Legs', 7, 3, 21);
-      drawClothing('Body', 9, -6, 11);
+      await drawClothing('Feet', 8, 0, 31);
+      await drawClothing('Legs', 7, 3, 21);
+      await drawClothing('Body', 8, -6, 11);
+      await drawClothing('Accessories/Body', 2, -6, 11);
+      // await drawClothing('Accessories/Head', 0, 2, -3);
+      await drawClothing('Head', 11, 2, -3);
+      await drawClothing('Accessories/Hands', 0, -6, 11);
       setIsGenerating(false);
     }
   }
