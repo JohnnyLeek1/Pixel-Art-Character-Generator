@@ -45,7 +45,8 @@ function App() {
       img.src = image.default;
   
       img.onload = () => context.drawImage(img, centerX + offsetX, centerY + offsetY);
-    });
+    })
+    .catch((error) => {});
   }
 
   const generateOutfit = () => {
@@ -53,10 +54,13 @@ function App() {
       setIsGenerating(true);
       redraw();
 
-      drawClothing('Head', 11, 2, -3);
       drawClothing('Feet', 8, 0, 31);
       drawClothing('Legs', 7, 3, 21);
-      drawClothing('Body', 9, -6, 11);
+      drawClothing('Body', 8, -6, 11);
+      drawClothing('Accessories/Body', 2, -6, 11);
+      drawClothing('Accessories/Head', 0, 2, -3);
+      drawClothing('Head', 11, 2, -3);
+      drawClothing('Accessories/Hands', 1, -6, 11);
       setIsGenerating(false);
     }
   }
