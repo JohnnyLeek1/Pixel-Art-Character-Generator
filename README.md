@@ -8,3 +8,4 @@ It it implemented in React.JS using an HTML canvas component, and is highly reus
 clothing styles and options!
 
 
+Check if out at [https://johnnyleek1.github.io/Pixel-Art-Character-Generator/](https://johnnyleek1.github.io/Pixel-Art-Character-Generator/)
