@@ -62,11 +62,11 @@ function App() {
 
       await drawClothing('Feet', 9, 0, 31);
       await drawClothing('Legs', 8, 3, 21);
-      await drawClothing('Body', 9, -6, 11);
+      await drawClothing('Body', 11, -6, 11);
       await drawClothing('Accessories/Body', 4, -6, 11);
       await drawClothing('Accessories/Head', 5, 2, -3);
-      await drawClothing('Head', 13, 2, -3);
-      await drawClothing('Accessories/Hands', 2, -6, 11);
+      await drawClothing('Head', 14, 2, -3);
+      await drawClothing('Accessories/Hands', 3, -6, 11);
       setIsGenerating(false);
     }
   }
