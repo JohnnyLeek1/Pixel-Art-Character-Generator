@@ -60,13 +60,13 @@ function App() {
       setIsGenerating(true);
       redraw();
 
-      await drawClothing('Feet', 9, 0, 31);
-      await drawClothing('Legs', 8, 3, 21);
-      await drawClothing('Body', 11, -6, 11);
-      await drawClothing('Accessories/Body', 4, -6, 11);
-      await drawClothing('Accessories/Head', 5, 2, -3);
-      await drawClothing('Head', 14, 2, -3);
-      await drawClothing('Accessories/Hands', 3, -6, 11);
+      await drawClothing('Feet', 10, 0, 31);
+      await drawClothing('Legs', 9, 3, 21);
+      await drawClothing('Body', 25, -6, 11);
+      await drawClothing('Accessories/Hands', 6, -6, 11);
+      await drawClothing('Accessories/Body', 6, -6, 11);
+      await drawClothing('Accessories/Head', 9, 2, -3);
+      await drawClothing('Head', 19, 2, -3);
       setIsGenerating(false);
     }
   }
