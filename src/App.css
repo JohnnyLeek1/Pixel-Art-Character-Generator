@@ -39,7 +39,12 @@ body {
   margin-bottom: 1.5rem;
 }
 
+a {
+  
+}
+
 #character {
+  background-color: #6f42c1;
   width: 512px;
   height: 512px;
 
